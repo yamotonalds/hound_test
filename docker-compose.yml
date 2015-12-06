@@ -1,0 +1,16 @@
+hound:
+#  build: .
+  image: hound:0.0.2
+  ports:
+    - "5000:5000"
+  links:
+    - redis
+    - postgres
+  env_file: .env
+
+redis:
+  image: redis
+
+postgres:
+  image: postgres
+
